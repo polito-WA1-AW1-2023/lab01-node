@@ -18,15 +18,15 @@ function Film(id, title, isFavorite = false, watchDate, rating) {
   this.toString = () => {
     return `Id: ${this.id}, ` +
     `Title: ${this.title}, Favorite: ${this.favorite}, ` +
-    `Watch date: ${this._formatWatchDate('MMMM D, YYYY')}, ` +
-    `Score: ${this._formatRating()}` ;
+    `Watch date: ${this.formatWatchDate('MMMM D, YYYY')}, ` +
+    `Score: ${this.formatRating()}` ;
   }
 
-  this._formatWatchDate = (format) => {
+  this.formatWatchDate = (format) => {
     return this.watchDate ? this.watchDate.format(format) : '<not defined>';
   }
 
-  this._formatRating = () => {
+  this.formatRating = () => {
     return this.rating ? this.rating : '<not assigned>';
   }
 }
